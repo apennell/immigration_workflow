@@ -27,18 +27,31 @@ class MilestonePanel extends React.Component {
 
   render() {
   	const title = (
-  	  <h3>title?</h3>
+  	  <h3>{this.props.workflowData.tasks[0].owner_type}</h3>
   	);
 
-  	
+  	const milestones = [
+  		"Onboarding", 
+  		"Labor Condition Application",
+  		"Petition",
+  		"Review",
+  		"Filing",
+  		"Post-Filing"
+		]
+;
+  	const milestonePanels = milestones.map((milestone) =>
+  		<Panel 
+  			key={milestone}
+  			header={milestone} 
+  			collapsible
+  		>
+  		  {milestone} content
+  		</Panel>
+  	);
+
   	return(
 		  <div>
-		    <Panel header="Panel heading without title" collapsible>
-		      Panel content
-		    </Panel>
-		    <Panel header={title} collapsible>
-		      Panel content
-		    </Panel>
+		    {milestonePanels}
 		  </div>
 	  );
 	}
