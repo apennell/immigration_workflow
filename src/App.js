@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1 className="text-center">H1-B Workflow</h1>
-        <MilestonePanel />
+        <MilestonePanel workflowData={this.props.workflowData} />
       </div>
     );
   }
