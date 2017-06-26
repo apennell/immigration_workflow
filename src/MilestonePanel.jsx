@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Panel} from 'react-bootstrap';
+import { Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
+import workflowData from '../src/H-1B_tasks.json';
 
 class MilestonePanel extends React.Component {
 	/**
@@ -26,31 +27,63 @@ class MilestonePanel extends React.Component {
 	}
 
   render() {
-  	const title = (
-  	  <h3>{this.props.workflowData.tasks[0].owner_type}</h3>
-  	);
+  	const tasks = workflowData.tasks;
+  	console.log(tasks);
 
-  	const milestones = [
-  		"Onboarding", 
-  		"Labor Condition Application",
-  		"Petition",
-  		"Review",
-  		"Filing",
-  		"Post-Filing"
-		]
-;
-  	const milestonePanels = milestones.map((milestone) =>
-  		<Panel 
-  			key={milestone}
-  			header={milestone} 
-  			collapsible
-  		>
-  		  {milestone} content
-  		</Panel>
+  	// create object with milestone arrays to accept tasks
+  	const milestones = {
+  		385: {
+  			"milestone_name": "Onboarding",
+  			"tasks": []
+  		}, 
+  		386: {
+  			"milestone_name": "Labor Condition Application",
+  			"tasks": []
+  		},
+  		387: {
+  			"milestone_name": "Petition",
+  			"tasks": []
+  		},
+  		388: {
+  			"milestone_name": "Review",
+  			"tasks": []
+  		},
+  		389: {
+  			"milestone_name": "Filing",
+  			"tasks": []
+  		},
+  		390: {
+  			"milestone_name": "Post-Filing",
+  			"tasks": []
+  		}
+		};
+
+		tasks.map((task) => {
+			milestones[task.milestone_id].tasks.push(
+				<ListGroupItem>{task.name}</ListGroupItem>
+			);
+		});
+
+		console.log(milestones);
+
+  	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
+	  	<div 
+	  		key={milestone}
+	  		className="col-xs-12"
+	  	>
+	  		<Panel 
+	  			header={milestones[milestone].milestone_name} 
+	  			collapsible
+	  		>
+		  		<ListGroup fill>
+  		      {milestones[milestone].tasks}
+  		    </ListGroup>
+	  		</Panel>
+  		</div>
   	);
 
   	return(
-		  <div>
+		  <div className="row">
 		    {milestonePanels}
 		  </div>
 	  );
