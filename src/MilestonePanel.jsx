@@ -60,7 +60,19 @@ class MilestonePanel extends React.Component {
 
 		tasks.map((task) => {
 			milestones[task.milestone_id].tasks.push(
-				<ListGroupItem>{task.name}</ListGroupItem>
+				<ListGroupItem key={task.id}>
+					<p>{task.name}</p>
+					{task.owner ? 
+						<p>{task.owner.first_name} {task.owner.last_name}, {task.owner_type}</p>
+					:
+						<p>User</p>
+					}
+					{task.completed ?
+						<p>Complete</p>
+					:
+						<p>Incomplete</p>
+					}
+				</ListGroupItem>
 			);
 		});
 
