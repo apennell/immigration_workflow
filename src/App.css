@@ -1,0 +1,27 @@
+.panel {
+	border-radius: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+.panel-default .panel-heading {
+	background-color: #3f75e7;
+	color: #fff;
+	border: 0;
+	border-radius: 0;
+	padding: 40px;
+}
+
+.panel-heading a:hover{
+	cursor: pointer;
+}
+
+.panel-heading h4{
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.list-group-item{
+	background-color: #eaeffb;
+}

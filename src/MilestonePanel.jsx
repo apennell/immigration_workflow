@@ -76,8 +76,6 @@ class MilestonePanel extends React.Component {
 			);
 		});
 
-		console.log(milestones);
-
   	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
 	  	<div 
 	  		key={milestone}
