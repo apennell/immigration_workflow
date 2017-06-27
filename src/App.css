@@ -5,23 +5,74 @@
 }
 
 .panel-default .panel-heading {
-	background-color: #3f75e7;
-	color: #fff;
+	background-color: #fafafa;
+	color: #3f75e7;
 	border: 0;
 	border-radius: 0;
 	padding: 40px;
+	min-height: 167px;
+	border: 2px solid;
+	border-bottom: 15px solid;
+	border-radius: 6px;
 }
 
-.panel-heading a:hover{
+.panel-heading a:hover {
 	cursor: pointer;
 }
 
-.panel-heading h4{
+.panel-heading h4 {
 	font-size: 32px;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 600;
 }
 
-.list-group-item{
-	background-color: #eaeffb;
+ul.list-group {
+	padding-top: 25px;
+	border-left: 4px solid #3f75e7;
+	margin-left: 23px;
+}
+
+ul.list-group:before {
+/*	top: 0px;
+  bottom: 70px;
+  position: absolute;
+  content: " ";
+  width: 4px;
+  background-color: #3f75e7;
+  left: 39px;
+  margin-left: -1.5px;
+  margin-top: 150px;*/
+}
+
+.list-badge {
+	position: absolute;
+	top: 16px;
+	left: -72px;
+	margin-left: 0;
+	color: #3f75e7;
+	background-color: #fff;
+	display: block;
+	width: 40px; 
+	height: 40px;
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0 0 0 5px #3f75e7;
+	line-height: 40px;
+	float: left;
+}
+
+.list-badge > i {
+	line-height: 40px;
+}
+
+.list-group-item {
+	background-color: transparent;
+	margin-left: 50px;
+	border: 0;
+}
+
+.list-content > h3 {
+	color: #3f75e7;
+	margin-top: 15px;
+	font-weight: 600;
 }

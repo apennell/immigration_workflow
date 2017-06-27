@@ -28,7 +28,6 @@ class MilestonePanel extends React.Component {
 
   render() {
   	const tasks = workflowData.tasks;
-  	console.log(tasks);
 
   	// create object with milestone arrays to accept tasks
   	const milestones = {
@@ -61,17 +60,22 @@ class MilestonePanel extends React.Component {
 		tasks.map((task) => {
 			milestones[task.milestone_id].tasks.push(
 				<ListGroupItem key={task.id}>
-					<p>{task.name}</p>
-					{task.owner ? 
-						<p>{task.owner.first_name} {task.owner.last_name}, {task.owner_type}</p>
-					:
-						<p>User</p>
-					}
-					{task.completed ?
-						<p>Complete</p>
-					:
-						<p>Incomplete</p>
-					}
+					<div className="list-badge">
+						<i className="fa fa-check fa-2x" />
+					</div>
+					<div className="list-content">
+						<h3>{task.name}</h3>
+						{task.owner ? 
+							<p>{task.owner.first_name} {task.owner.last_name}, {task.owner_type}</p>
+						:
+							<p>User</p>
+						}
+						{task.completed ?
+							<p>Complete</p>
+						:
+							<p>Incomplete</p>
+						}
+					</div>
 				</ListGroupItem>
 			);
 		});
@@ -79,7 +83,7 @@ class MilestonePanel extends React.Component {
   	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
 	  	<div 
 	  		key={milestone}
-	  		className="col-xs-12"
+	  		className="col-xs-12 col-sm-6 "
 	  	>
 	  		<Panel 
 	  			header={milestones[milestone].milestone_name} 
@@ -87,6 +91,9 @@ class MilestonePanel extends React.Component {
 	  		>
 		  		<ListGroup fill>
   		      {milestones[milestone].tasks}
+  		      <ListGroupItem>
+							<div className="list-badge" />
+  		      </ListGroupItem>
   		    </ListGroup>
 	  		</Panel>
   		</div>
