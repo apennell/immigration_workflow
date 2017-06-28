@@ -75,3 +75,16 @@
 		font-weight: 600;
 	}
 }
+
+.btn-close-x {
+	position: absolute;
+	right: -75px;
+	background-color: transparent;
+	color: #fff;
+	right: -45px;
+
+	&:hover{
+		cursor: pointer;
+		color: $primary-color-dark;
+	}
+}

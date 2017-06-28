@@ -72,7 +72,11 @@ class MilestonePanel extends React.Component {
 			};
 
 			return milestones[task.milestone_id].tasks.push(
-				<ListItem task={task} key={task.id} />
+				<ListItem 
+					key={task.id}
+					task={task} 
+					milestone={milestones[task.milestone_id].milestone_name}
+				/>
 			);
 		});
 

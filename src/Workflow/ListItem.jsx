@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ListGroupItem, Modal } from 'react-bootstrap';
 import TaskModal from './TaskModal.jsx';
 import './Workflow.css';
@@ -60,11 +61,25 @@ class ListItem extends React.Component {
 					show={this.state.showModal} 
 					onHide={(e) => this.closeMe(e)}
 				>
-					<TaskModal onClose={this.closeMe} />
+					<TaskModal 
+						task={this.props.task}
+						milestone={this.props.milestone}
+						onClose={this.closeMe}
+					/>
 				</Modal>
 			</div>
 	  );
 	}
 }
+
+ListItem.propTypes = {
+	task: PropTypes.object,
+	milestone: PropTypes.string,
+};
+
+ListItem.defaultProps = {
+	task: {},
+	milestone: '',
+};
 
 export default ListItem;
