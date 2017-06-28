@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
-import workflowData from '../src/H-1B_tasks.json';
+import workflowData from '../H-1B_tasks.json';
+import './Workflow.css';
 
 class MilestonePanel extends React.Component {
 	/**
@@ -24,6 +25,11 @@ class MilestonePanel extends React.Component {
 		};
 
 
+	}
+
+	checkMilestone(milestone) {
+		console.log(milestone);
+		return milestone.id % 2 === 0;
 	}
 
   render() {
@@ -58,10 +64,14 @@ class MilestonePanel extends React.Component {
 		};
 
 		tasks.map((task) => {
-			milestones[task.milestone_id].tasks.push(
+			return milestones[task.milestone_id].tasks.push(
 				<ListGroupItem key={task.id}>
 					<div className="list-badge">
-						<i className="fa fa-check fa-2x" />
+						{task.completed ?
+							<i className="fa fa-check fa-2x" />
+						:
+							<i className="fa fa-user fa-2x" />
+						}
 					</div>
 					<div className="list-content">
 						<h3>{task.name}</h3>
@@ -70,20 +80,18 @@ class MilestonePanel extends React.Component {
 						:
 							<p>User</p>
 						}
-						{task.completed ?
-							<p>Complete</p>
-						:
-							<p>Incomplete</p>
-						}
 					</div>
 				</ListGroupItem>
 			);
 		});
 
+		let evenMilestones = Object.keys(milestones).filter(this.checkMilestone);
+		console.log(evenMilestones);
+
   	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
 	  	<div 
 	  		key={milestone}
-	  		className="col-xs-12 col-sm-6 "
+	  		className="col-xs-6 col-sm-6 "
 	  	>
 	  		<Panel 
 	  			header={milestones[milestone].milestone_name} 

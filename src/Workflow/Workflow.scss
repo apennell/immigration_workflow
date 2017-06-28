@@ -1,12 +1,15 @@
+@import "_variables.scss";
+
 .panel {
 	border-radius: 0;
 	border: 0;
 	box-shadow: none;
+	font-family: $primaryFont;
 }
 
 .panel-default .panel-heading {
-	background-color: #fafafa;
-	color: #3f75e7;
+	background-color: #fff;
+	color: #2455ba;
 	border: 0;
 	border-radius: 0;
 	padding: 40px;
@@ -16,20 +19,26 @@
 	border-radius: 6px;
 }
 
-.panel-heading a:hover {
-	cursor: pointer;
+.panel-heading {
+
+	a:hover {
+		cursor: pointer;
+	}
+
+	h4 {
+		font-size: 32px;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
 }
 
-.panel-heading h4 {
-	font-size: 32px;
-	text-transform: uppercase;
-	font-weight: 600;
-}
-
-ul.list-group {
-	padding-top: 25px;
-	border-left: 4px solid #3f75e7;
-	margin-left: 23px;
+ul {
+	
+	&.list-group {
+		padding-top: 25px;
+		border-left: 4px solid #2455ba;
+		margin-left: 23px;
+	}
 }
 
 ul.list-group:before {
@@ -49,20 +58,20 @@ ul.list-group:before {
 	top: 16px;
 	left: -72px;
 	margin-left: 0;
-	color: #3f75e7;
+	color: #2455ba;
 	background-color: #fff;
 	display: block;
 	width: 40px; 
 	height: 40px;
 	border-radius: 20px;
 	text-align: center;
-	box-shadow: 0 0 0 5px #3f75e7;
+	box-shadow: 0 0 0 5px #2455ba;
 	line-height: 40px;
 	float: left;
-}
 
-.list-badge > i {
-	line-height: 40px;
+	i{
+		line-height: 40px;
+	}
 }
 
 .list-group-item {
@@ -71,8 +80,11 @@ ul.list-group:before {
 	border: 0;
 }
 
-.list-content > h3 {
-	color: #3f75e7;
-	margin-top: 15px;
-	font-weight: 600;
+.list-content {
+
+	h3 {
+		color: #2455ba;
+		margin-top: 14px;
+		font-weight: 600;
+	}
 }

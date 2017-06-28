@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MilestonePanel from './MilestonePanel.jsx';
+import MilestonePanel from './Workflow/MilestonePanel.jsx';
 
 class App extends Component {
 
