@@ -4,12 +4,12 @@
 	border-radius: 0;
 	border: 0;
 	box-shadow: none;
-	font-family: $primaryFont;
+	font-family: $primary-font;
 }
 
 .panel-default .panel-heading {
 	background-color: #fff;
-	color: #2455ba;
+	color: $primary-color-dark;
 	border: 0;
 	border-radius: 0;
 	padding: 40px;
@@ -36,7 +36,7 @@ ul {
 	
 	&.list-group {
 		padding-top: 25px;
-		border-left: 4px solid #2455ba;
+		border-left: 4px solid $primary-color-dark;
 		margin-left: 23px;
 	}
 }
@@ -58,14 +58,14 @@ ul.list-group:before {
 	top: 16px;
 	left: -72px;
 	margin-left: 0;
-	color: #2455ba;
+	color: $primary-color-dark;
 	background-color: #fff;
 	display: block;
 	width: 40px; 
 	height: 40px;
 	border-radius: 20px;
 	text-align: center;
-	box-shadow: 0 0 0 5px #2455ba;
+	box-shadow: 0 0 0 5px $primary-color-dark;
 	line-height: 40px;
 	float: left;
 
@@ -83,7 +83,7 @@ ul.list-group:before {
 .list-content {
 
 	h3 {
-		color: #2455ba;
+		color: $primary-color-dark;
 		margin-top: 14px;
 		font-weight: 600;
 	}
