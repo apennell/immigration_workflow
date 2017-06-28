@@ -1765,7 +1765,7 @@
     "last_name":"Atty",
     "deleted_at":null}}],
   "user": {
-    "name":"Bertram Gilfoyle",
+    "full_name":"Bertram Gilfoyle",
     "email":"gilfoyle@piedpiper.ca",
     "company":"Pied Piper"
   }

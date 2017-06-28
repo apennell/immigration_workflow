@@ -61,18 +61,29 @@
 	box-shadow: 0 0 0 5px $primary-color-dark;
 }
 
-.list-group-item {
+.list-group-item, button.list-group-item, .list-group-item:focus, button.list-group-item:focus {
 	background-color: transparent;
 	margin-left: 50px;
 	border: 0;
-}
-
-.list-content {
 
 	h3 {
 		color: $grey-dark;
 		margin-top: 14px;
 		font-weight: 600;
+	}
+
+	&:hover{
+		background-color: transparent;
+		color: $primary-color-dark;
+		cursor: pointer;
+
+		.list-badge {
+			box-shadow: 0 0 0 5px $primary-color-dark;
+		}
+
+		h3 {
+			color: $primary-color-dark;
+		}
 	}
 }
 

@@ -52,7 +52,7 @@ class ListItem extends React.Component {
 						{this.props.task.owner ? 
 							<p>{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
 						:
-							<p>User</p>
+							<p>{this.props.user.full_name}, User</p>
 						}
 					</div>
 				</ListGroupItem>
@@ -64,6 +64,7 @@ class ListItem extends React.Component {
 					<TaskModal 
 						task={this.props.task}
 						milestone={this.props.milestone}
+						user={this.props.user}
 						onClose={this.closeMe}
 					/>
 				</Modal>
@@ -75,11 +76,13 @@ class ListItem extends React.Component {
 ListItem.propTypes = {
 	task: PropTypes.object,
 	milestone: PropTypes.string,
+	user: PropTypes.object,
 };
 
 ListItem.defaultProps = {
 	task: {},
 	milestone: '',
+	user: {},
 };
 
 export default ListItem;

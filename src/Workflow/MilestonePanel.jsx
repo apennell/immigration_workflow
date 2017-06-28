@@ -76,6 +76,7 @@ class MilestonePanel extends React.Component {
 					key={task.id}
 					task={task} 
 					milestone={milestones[task.milestone_id].milestone_name}
+					user={workflowData.user}
 				/>
 			);
 		});

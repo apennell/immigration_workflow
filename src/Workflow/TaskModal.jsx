@@ -33,16 +33,17 @@ class TaskModal extends React.Component {
 			      <p>Due: {this.props.task.due_date}</p>
 		      </div>
 
-		      <div className="lower-content">
-			      {this.props.task.owner ? 
-			      	<div>
-				      	<p>{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
-				      	<p>{this.props.task.owner.email}</p>
-			      	</div>
-			      :
-			      	<p>User</p>
-			      }
-		      </div>
+		      {this.props.task.owner ? 
+		      	<div className="lower-content">
+			      	<p>{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
+			      	<p>{this.props.task.owner.email}</p>
+		      	</div>
+		      :
+			      <div className="lower-content">
+			      	<p>{this.props.user.full_name}, User</p>
+			      	<p>{this.props.user.email}</p>
+		      	</div>
+		      }
 		    </Modal.Body>
   		</div>
 	  );
@@ -53,12 +54,14 @@ TaskModal.propTypes = {
 	task: PropTypes.object,
 	milestone: PropTypes.string,
 	onClose: PropTypes.func,
+	user: PropTypes.object,
 };
 
 TaskModal.defaultProps = {
 	task: {},
 	milestone: '',
 	onClose: function() {},
+	user: {},
 };
 
 export default TaskModal;
