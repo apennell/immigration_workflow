@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import "src/_variables";
 
 .panel {
 	border-radius: 0;
@@ -9,7 +9,7 @@
 
 .panel-default .panel-heading {
 	background-color: #fff;
-	color: $primary-color-dark;
+	color: $grey-dark;
 	border: 0;
 	border-radius: 0;
 	padding: 40px;
@@ -36,7 +36,7 @@ ul {
 	
 	&.list-group {
 		padding-top: 25px;
-		border-left: 4px solid $primary-color-dark;
+		border-left: 4px solid $grey-dark;
 		margin-left: 23px;
 	}
 }
@@ -65,13 +65,19 @@ ul.list-group:before {
 	height: 40px;
 	border-radius: 20px;
 	text-align: center;
-	box-shadow: 0 0 0 5px $primary-color-dark;
+	box-shadow: 0 0 0 5px $grey-dark;
 	line-height: 40px;
 	float: left;
 
 	i{
 		line-height: 40px;
 	}
+}
+
+.list-badge.completed {
+	background-color: $primary-color;
+	color: #fff;
+	box-shadow: 0 0 0 5px $primary-color-dark;
 }
 
 .list-group-item {
@@ -83,7 +89,7 @@ ul.list-group:before {
 .list-content {
 
 	h3 {
-		color: $primary-color-dark;
+		color: $grey-dark;
 		margin-top: 14px;
 		font-weight: 600;
 	}

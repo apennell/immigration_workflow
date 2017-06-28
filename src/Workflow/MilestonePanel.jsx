@@ -16,14 +16,8 @@ class MilestonePanel extends React.Component {
 
 		// methods to bind
 		this.bindHelper(
-
+			'checkMilestone'
 		);
-
-		// getInitialState
-		this.state = {
-
-		};
-
 
 	}
 
@@ -39,31 +33,41 @@ class MilestonePanel extends React.Component {
   	const milestones = {
   		385: {
   			"milestone_name": "Onboarding",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		}, 
   		386: {
   			"milestone_name": "Labor Condition Application",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		},
   		387: {
   			"milestone_name": "Petition",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		},
   		388: {
   			"milestone_name": "Review",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		},
   		389: {
   			"milestone_name": "Filing",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		},
   		390: {
   			"milestone_name": "Post-Filing",
-  			"tasks": []
+  			"tasks": [],
+  			"completed": 0
   		}
 		};
 
 		tasks.map((task) => {
+			if (task.completed) {
+				milestones[task.milestone_id].completed ++;
+			};
+
 			return milestones[task.milestone_id].tasks.push(
 				<ListGroupItem key={task.id}>
 					<div className="list-badge">
@@ -94,13 +98,19 @@ class MilestonePanel extends React.Component {
 	  		className="col-xs-6 col-sm-6 "
 	  	>
 	  		<Panel 
-	  			header={milestones[milestone].milestone_name} 
+	  			header={`${milestones[milestone].milestone_name} -- ${milestones[milestone].completed}/${milestones[milestone].tasks.length}`} 
 	  			collapsible
 	  		>
 		  		<ListGroup fill>
   		      {milestones[milestone].tasks}
   		      <ListGroupItem>
-							<div className="list-badge" />
+  		      	{milestones[milestone].completed ?
+  		      		<div className="list-badge completed">
+		      				<i className="fa fa-check fa-2x" />
+  		      		</div>
+  		      	:
+  		      		<div className="list-badge" />
+  		      	}
   		      </ListGroupItem>
   		    </ListGroup>
 	  		</Panel>
