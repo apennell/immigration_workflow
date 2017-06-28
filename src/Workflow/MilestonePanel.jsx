@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
+import { Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
+import ListItem from './ListItem.jsx';
 import workflowData from '../H-1B_tasks.json';
 import './Workflow.css';
 
@@ -7,24 +8,24 @@ class MilestonePanel extends React.Component {
 	/**
 	 * [bindHelper looks like it binds this to method names so you don't have to specifiy it
 	 */
-	bindHelper(...methodNames) {
-		methodNames.forEach((methodName) => this[methodName] = this[methodName].bind(this));
-	}
+	// bindHelper(...methodNames) {
+	// 	methodNames.forEach((methodName) => this[methodName] = this[methodName].bind(this));
+	// }
 
 	constructor(props) {
 		super(props);
 
 		// methods to bind
-		this.bindHelper(
-			'checkMilestone'
-		);
+		// this.bindHelper(
+		// 	'checkMilestone'
+		// );
 
 	}
 
-	checkMilestone(milestone) {
-		console.log(milestone);
-		return milestone.id % 2 === 0;
-	}
+	// checkMilestone(milestone) {
+	// 	console.log(milestone);
+	// 	return milestone.id % 2 === 0;
+	// }
 
   render() {
   	const tasks = workflowData.tasks;
@@ -63,35 +64,22 @@ class MilestonePanel extends React.Component {
   		}
 		};
 
+		// add each task to their respective milestone object
 		tasks.map((task) => {
+			// get total completed for milestone by increasing if this task done
 			if (task.completed) {
 				milestones[task.milestone_id].completed ++;
 			};
 
 			return milestones[task.milestone_id].tasks.push(
-				<ListGroupItem key={task.id}>
-					<div className="list-badge">
-						{task.completed ?
-							<i className="fa fa-check fa-2x" />
-						:
-							<i className="fa fa-user fa-2x" />
-						}
-					</div>
-					<div className="list-content">
-						<h3>{task.name}</h3>
-						{task.owner ? 
-							<p>{task.owner.first_name} {task.owner.last_name}, {task.owner_type}</p>
-						:
-							<p>User</p>
-						}
-					</div>
-				</ListGroupItem>
+				<ListItem task={task} key={task.id} />
 			);
 		});
 
-		let evenMilestones = Object.keys(milestones).filter(this.checkMilestone);
-		console.log(evenMilestones);
+		// let evenMilestones = Object.keys(milestones).filter(this.checkMilestone);
+		// console.log(evenMilestones);
 
+  	// create panel for each milestone and push to row
   	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
 	  	<div 
 	  		key={milestone}
@@ -102,7 +90,10 @@ class MilestonePanel extends React.Component {
 	  			collapsible
 	  		>
 		  		<ListGroup fill>
+		  			{/** list of tasks */}
   		      {milestones[milestone].tasks}
+
+  		      {/** empty bottom circle */}
   		      <ListGroupItem>
   		      	{milestones[milestone].completed ?
   		      		<div className="list-badge completed">

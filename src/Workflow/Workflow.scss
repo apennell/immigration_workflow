@@ -31,43 +31,24 @@
 		font-weight: 600;
 	}
 }
-
-ul {
 	
-	&.list-group {
-		padding-top: 25px;
-		border-left: 4px solid $grey-dark;
-		margin-left: 23px;
-	}
-}
-
-ul.list-group:before {
-/*	top: 0px;
-  bottom: 70px;
-  position: absolute;
-  content: " ";
-  width: 4px;
-  background-color: #3f75e7;
-  left: 39px;
-  margin-left: -1.5px;
-  margin-top: 150px;*/
+.list-group {
+	padding-top: 25px;
+	border-left: 4px solid $grey-dark;
+	margin-left: 23px;
 }
 
 .list-badge {
 	position: absolute;
 	top: 16px;
 	left: -72px;
-	margin-left: 0;
 	color: $primary-color-dark;
 	background-color: #fff;
-	display: block;
 	width: 40px; 
 	height: 40px;
 	border-radius: 20px;
 	text-align: center;
 	box-shadow: 0 0 0 5px $grey-dark;
-	line-height: 40px;
-	float: left;
 
 	i{
 		line-height: 40px;
