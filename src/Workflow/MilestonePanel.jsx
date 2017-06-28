@@ -100,7 +100,7 @@ class MilestonePanel extends React.Component {
 
   		      {/** empty bottom circle */}
   		      <ListGroupItem>
-  		      	{milestones[milestone].completed ?
+  		      	{milestones[milestone].completed === milestones[milestone].tasks.length ?
   		      		<div className="list-badge completed">
 		      				<i className="fa fa-check fa-2x" />
   		      		</div>
