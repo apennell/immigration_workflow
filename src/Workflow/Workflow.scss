@@ -1,5 +1,38 @@
 @import "src/_variables";
 
+.header-wrapper {
+	height: 150px;
+	background-color: lighten($primary-color, 10%);
+	margin-bottom: 25px;
+}
+
+.header-img {
+	height: 130px;
+	margin: 10px 0;
+	border: 5px solid #fff;
+	border-radius: 50%;
+}
+
+.header-text {
+	display: inline-block;
+	padding: 0 20px;
+	vertical-align: bottom;
+
+	.header-name {
+		color: #fff;
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+
+	.header-company {
+		color: #fff;
+		text-transform: uppercase;
+		margin-top: 0px;
+		font-weight: normal;
+	}
+}
+
 .panel {
 	border-radius: 0;
 	border: 0;

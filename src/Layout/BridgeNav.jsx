@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, Navbar, } from 'react-bootstrap';
 import './Layout.css';
-import logo from '../bridge-logo.png';
+import logo from '../images/bridge-logo.png';
 
 const BridgeNav = () => {
 	return(
