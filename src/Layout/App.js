@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import MilestonePanel from './Workflow/MilestonePanel.jsx';
+import BridgeNav from './BridgeNav.jsx';
+import MilestonePanel from '../Workflow/MilestonePanel.jsx';
 
 class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
+      	<BridgeNav />
+
         <h1 className="text-center">H1-B Workflow</h1>
-        <MilestonePanel workflowData={this.props.workflowData} />
+        
+        <MilestonePanel />
       </div>
     );
   }

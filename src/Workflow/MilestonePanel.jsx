@@ -19,6 +19,15 @@ class MilestonePanel extends React.Component {
 		// this.bindHelper(
 		// 	'checkMilestone'
 		// );
+		this.state = {
+			open385: false,
+			open386: false,
+			open387: false,
+			open388: false,
+			open389: false,
+			open390: false,
+			open: false,
+		}
 
 	}
 
@@ -85,37 +94,54 @@ class MilestonePanel extends React.Component {
 		// console.log(evenMilestones);
 
   	// create panel for each milestone and push to row
-  	const milestonePanels = Object.keys(milestones).map((milestone, index) =>
-	  	<div 
-	  		key={milestone}
-	  		className="col-xs-6 col-sm-6 "
-	  	>
-	  		<Panel 
-	  			header={`${milestones[milestone].milestone_name} -- ${milestones[milestone].completed}/${milestones[milestone].tasks.length}`} 
-	  			collapsible
-	  		>
-		  		<ListGroup fill>
-		  			{/** list of tasks */}
-  		      {milestones[milestone].tasks}
+  	const milestonePanels = Object.keys(milestones).map((milestone, index) => {
 
-  		      {/** empty bottom circle */}
-  		      <ListGroupItem>
-  		      	{milestones[milestone].completed === milestones[milestone].tasks.length ?
-  		      		<div className="list-badge completed">
-		      				<i className="fa fa-check fa-2x" />
-  		      		</div>
-  		      	:
-  		      		<div className="list-badge" />
-  		      	}
-  		      </ListGroupItem>
-  		    </ListGroup>
-	  		</Panel>
-  		</div>
-  	);
+	  	
+	  	return(
+		  	<div 
+		  		key={milestone}
+		  		className="col-xs-12 col-sm-6"
+		  	>
+		  		<Panel 
+		  			header={`${milestones[milestone].milestone_name} -- ${milestones[milestone].completed}/${milestones[milestone].tasks.length}`} 
+		  			collapsible
+		  		>
+			  		<ListGroup fill>
+			  			{/** list of tasks */}
+	  		      {milestones[milestone].tasks}
+
+	  		      {/** empty bottom circle */}
+	  		      <ListGroupItem>
+	  		      	{milestones[milestone].completed === milestones[milestone].tasks.length ?
+	  		      		<div className="list-badge completed">
+			      				<i className="fa fa-check fa-2x" />
+	  		      		</div>
+	  		      	:
+	  		      		<div className="list-badge" />
+	  		      	}
+	  		      </ListGroupItem>
+	  		    </ListGroup>
+		  		</Panel>
+	  		</div>
+  		);
+  	});
 
   	return(
-		  <div className="row">
-		    {milestonePanels}
+  		<div className="container">
+			  <div className="row">
+			  	<div className="col-xs-12">
+				    <button 
+					    className="btn btn-default"
+				    	onClick={ ()=> this.setState({ open: !this.state.open })}
+				    >
+				    	Show all tasks
+				    </button>
+				   </div>
+		    </div>
+
+			  <div className="row">
+			    {milestonePanels}
+		    </div>
 		  </div>
 	  );
 	}
