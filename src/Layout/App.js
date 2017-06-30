@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BridgeNav from './BridgeNav.jsx';
-import MilestonePanel from '../Workflow/MilestonePanel.jsx';
+import Milestones from '../Workflow/Milestones.jsx';
 import Header from '../Workflow/Header.jsx';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
 
         <Header />
         
-        <MilestonePanel />
+        <Milestones />
       </div>
     );
   }
