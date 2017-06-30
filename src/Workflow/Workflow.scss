@@ -55,6 +55,11 @@
 	border: 0;
 	box-shadow: none;
 	font-family: $primary-font;
+	margin-bottom: 30px;
+
+	@media screen and (max-width: 767px) {
+		margin-bottom: 15px;
+	}
 }
 
 .panel-default .panel-heading {
@@ -91,6 +96,10 @@
 			background-color: $primary-color;
 		}
 	}
+}
+
+.panel-collapse {
+	margin-bottom: 55px;
 }
 
 .milestone-title {
@@ -146,7 +155,7 @@
 }
 	
 .list-group {
-	padding-top: 25px;
+	padding-top: 5px;
 	border-left: 4px solid $grey-dark;
 	margin-left: 23px;
 }
@@ -154,17 +163,17 @@
 .list-badge {
 	position: absolute;
 	top: 16px;
-	left: -72px;
+	left: -37px;
 	color: $primary-color-dark;
 	background-color: #fff;
-	width: 40px; 
-	height: 40px;
+	width: 30px; 
+	height: 30px;
 	border-radius: 20px;
 	text-align: center;
 	box-shadow: 0 0 0 5px $grey-dark;
 
 	i{
-		line-height: 40px;
+		line-height: 30px;
 	}
 }
 
@@ -176,13 +185,15 @@
 
 .list-group-item, button.list-group-item, .list-group-item:focus, button.list-group-item:focus {
 	background-color: transparent;
-	margin-left: 50px;
+	margin-left: 20px;
 	border: 0;
 
-	h3 {
+	h4 {
 		color: $grey-dark;
 		margin-top: 14px;
 		font-weight: 600;
+		margin-bottom: 5px;
+		margin-top: 5px;
 	}
 
 	&:hover{

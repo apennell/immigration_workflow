@@ -42,13 +42,13 @@ class ListItem extends React.Component {
 			  <ListGroupItem onClick={this.openMe}>
 					<div className="list-badge">
 						{this.props.task.completed ?
-							<i className="fa fa-check fa-2x" />
+							<i className="fa fa-check fa-lg" />
 						:
-							<i className="fa fa-user fa-2x" />
+							<i className="fa fa-user fa-lg" />
 						}
 					</div>
 					<div className="list-content">
-						<h3>{this.props.task.name}</h3>
+						<h4>{this.props.task.name}</h4>
 						{this.props.task.owner ? 
 							<p>{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
 						:

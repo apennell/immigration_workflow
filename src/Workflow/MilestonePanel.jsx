@@ -66,7 +66,7 @@ class MilestonePanel extends React.Component {
 	  		      <ListGroupItem>
 	  		      	{this.props.completed === this.props.tasks.length ?
 	  		      		<div className="list-badge completed">
-			      				<i className="fa fa-check fa-2x" />
+			      				<i className="fa fa-check fa-lg" />
 	  		      		</div>
 	  		      	:
 	  		      		<div className="list-badge" />
