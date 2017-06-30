@@ -35,6 +35,17 @@ class MilestonePanel extends React.Component {
 	}
 
   render() {
+  	const header = (
+  		<div>
+  			<div className="milestone-title">
+	  			<h4>{this.props.milestoneName}</h4>
+  			</div>
+  			<div className="task-count">
+  				<h4>{this.props.completed}/{this.props.tasks.length}</h4>
+				</div>
+  		</div>
+		);
+
   	const panel = (
   		<div className="row">
 		  	<div 
@@ -42,7 +53,7 @@ class MilestonePanel extends React.Component {
 		  		className="col-xs-12"
 		  	>
 		  		<Panel 
-		  			header={`${this.props.milestoneName} -- ${this.props.completed}/${this.props.tasks.length}`} 
+		  			header={header} 
 		  			collapsible
 		  			expanded={this.state.open}
 		  			onClick={()=> this.setState({ open: !this.state.open })}

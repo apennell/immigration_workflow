@@ -181,7 +181,7 @@ class Milestones extends React.Component {
 			  <div className="row">
 			  	<div className="col-xs-12">
 				    <button 
-					    className="btn btn-default"
+					    className="show-btn pull-right"
 				    	onClick={()=> this.setState({ showAll: !this.state.showAll })}
 				    >
 				    	{this.state.showAll ? 'Hide' : 'Show'} all tasks
