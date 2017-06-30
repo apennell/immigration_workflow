@@ -44,7 +44,7 @@ class ListItem extends React.Component {
 						{this.props.task.completed ?
 							<i className="fa fa-check fa-lg" />
 						:
-							<i className="fa fa-user fa-lg" />
+							""
 						}
 					</div>
 					<div className="list-content">
