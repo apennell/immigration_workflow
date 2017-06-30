@@ -29,7 +29,7 @@ class MilestonePanel extends React.Component {
 
   render() {
   	const header = (
-  		<div>
+  		<div onClick={()=> this.setState({ open: !this.state.open })}>
   			<div className="milestone-title">
 	  			<h4>{this.props.milestoneName}</h4>
   			</div>
@@ -49,7 +49,6 @@ class MilestonePanel extends React.Component {
 		  			header={header} 
 		  			collapsible
 		  			expanded={this.state.open}
-		  			onClick={()=> this.setState({ open: !this.state.open })}
 		  		>
 			  		<ListGroup fill>
 			  			{/** list of tasks */}
