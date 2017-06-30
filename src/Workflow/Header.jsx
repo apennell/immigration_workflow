@@ -7,14 +7,16 @@ const Header = () => {
 		<div className="header-wrapper">
 			<div className="container">
 				<div className="row">
-					<div className="col-xs-12">
+					<div className="col-xs-12 col-sm-3 col-md-2 center-mobile">
 						<img 
 							src={workflowData.user.profile_pic} 
 							className="header-img" 
 							alt="user-pic"
 						/>
+					</div>
+					<div className="col-xs-12 col-sm-9 col-md-10 center-mobile">
 						<div className="header-text">
-							<h1 className="header-name">{workflowData.user.full_name}'s H1-B Transfer</h1>
+							<h1 className="header-name">{workflowData.user.full_name}'s <span>H1-B Transfer</span></h1>
 							<h3 className="header-company">{workflowData.user.company}</h3>
 						</div>
 					</div>
