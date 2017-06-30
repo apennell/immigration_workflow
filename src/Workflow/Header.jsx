@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import workflowData from '../H-1B_tasks.json';
 import './Workflow.css';
 

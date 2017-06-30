@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroupItem, Modal } from 'react-bootstrap';
 import TaskModal from './TaskModal.jsx';
@@ -6,7 +6,7 @@ import './Workflow.css';
 
 class ListItem extends React.Component {
 	/**
-	 * [bindHelper looks like it binds this to method names so you don't have to specifiy it
+	 * [bindHelper binds this to method names so you don't have to specifiy it
 	 */
 	bindHelper(...methodNames) {
 		methodNames.forEach((methodName) => this[methodName] = this[methodName].bind(this));

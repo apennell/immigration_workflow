@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import './Workflow.css';
 
 class TaskModal extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
   render() {
   	return(

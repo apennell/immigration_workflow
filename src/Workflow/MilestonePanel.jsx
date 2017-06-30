@@ -1,22 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import './Workflow.css';
 
 class MilestonePanel extends React.Component {
-	/**
-	 * [bindHelper binds this to method names so you don't have to specifiy it
-	 */
-	// bindHelper(...methodNames) {
-	// 	methodNames.forEach((methodName) => this[methodName] = this[methodName].bind(this));
-	// }
-
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			open: false,
 		}
-
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -85,5 +78,20 @@ class MilestonePanel extends React.Component {
 	  );
 	}
 }
+
+MilestonePanel.propTypes = {
+	milestoneId: PropTypes.number.isRequired,
+	milestoneName: PropTypes.string,
+	tasks: PropTypes.object,
+	completed: PropTypes.bool,
+	showAll: PropTypes.bool,
+};
+
+MilestonePanel.defaultProps = {
+	milestoneName: 'Milestone',
+	tasks: {},
+	completed: false,
+	showAll: false,
+};
 
 export default MilestonePanel;

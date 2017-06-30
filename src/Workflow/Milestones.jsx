@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import $ from 'jquery';
 import ListItem from './ListItem.jsx';
 import MilestonePanel from './MilestonePanel.jsx';
@@ -7,7 +7,7 @@ import './Workflow.css';
 
 class Milestones extends React.Component {
 	/**
-	 * [bindHelper looks like it binds this to method names so you don't have to specifiy it
+	 * [bindHelper binds this to method names so you don't have to specifiy it
 	 */
 	bindHelper(...methodNames) {
 		methodNames.forEach((methodName) => this[methodName] = this[methodName].bind(this));
@@ -69,7 +69,6 @@ class Milestones extends React.Component {
 		};
 
   	const tasks = workflowData.tasks;
-
 		tasks.map((task) => {
 			// get total completed for milestone by increasing if this task done
 			if (task.completed) {

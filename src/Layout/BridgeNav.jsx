@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Nav, NavItem, Navbar, } from 'react-bootstrap';
 import './Layout.css';
 import logo from '../images/bridge-logo.png';
