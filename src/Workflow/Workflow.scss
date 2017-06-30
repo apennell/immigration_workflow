@@ -1,22 +1,25 @@
 @import "src/_variables";
 
 .header-wrapper {
-	height: 150px;
+	height: 80px;
 	background-color: lighten($primary-color, 10%);
-	margin-bottom: 25px;
+	margin-bottom: 80px;
 }
 
 .header-img {
 	height: 130px;
-	margin: 10px 0;
 	border: 5px solid #fff;
 	border-radius: 50%;
+	position: relative;
+	top: 15px;
 }
 
 .header-text {
 	display: inline-block;
 	padding: 0 20px;
 	vertical-align: bottom;
+	position: relative;
+	top: -11px;
 
 	.header-name {
 		color: #fff;
@@ -26,7 +29,7 @@
 	}
 
 	.header-company {
-		color: #fff;
+		color: $grey-dark;
 		text-transform: uppercase;
 		margin-top: 0px;
 		font-weight: normal;

@@ -20,10 +20,17 @@ class MilestonePanel extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.showAll === this.state.open) {
-			this.setState({
-				open: !this.state.open
-			})
+		// if showAll was clicked, reset local open state
+		if (prevProps.showAll !== this.props.showAll) {
+			if (this.props.showAll) {
+				this.setState({
+					open: true
+				});
+			} else {
+				this.setState({
+					open: false
+				});
+			}
 		} 
 	}
 
@@ -37,7 +44,7 @@ class MilestonePanel extends React.Component {
 		  		<Panel 
 		  			header={`${this.props.milestoneName} -- ${this.props.completed}/${this.props.tasks.length}`} 
 		  			collapsible
-		  			expanded={this.state.open || this.props.showAll}
+		  			expanded={this.state.open}
 		  			onClick={()=> this.setState({ open: !this.state.open })}
 		  		>
 			  		<ListGroup fill>
