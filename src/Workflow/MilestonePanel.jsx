@@ -82,8 +82,8 @@ class MilestonePanel extends React.Component {
 MilestonePanel.propTypes = {
 	milestoneId: PropTypes.number.isRequired,
 	milestoneName: PropTypes.string,
-	tasks: PropTypes.object,
-	completed: PropTypes.bool,
+	tasks: PropTypes.array,
+	completed: PropTypes.number,
 	showAll: PropTypes.bool,
 };
 
