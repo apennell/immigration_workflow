@@ -35,12 +35,12 @@ class TaskModal extends React.Component {
 
 		      {this.props.task.owner ? 
 		      	<div className="lower-content">
-			      	<p>{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
+			      	<p className="owner-name">{this.props.task.owner.first_name} {this.props.task.owner.last_name}, {this.props.task.owner_type}</p>
 			      	<p>{this.props.task.owner.email}</p>
 		      	</div>
 		      :
 			      <div className="lower-content">
-			      	<p>{this.props.user.full_name}, User</p>
+			      	<p className="owner-name">{this.props.user.full_name}, User</p>
 			      	<p>{this.props.user.email}</p>
 		      	</div>
 		      }
