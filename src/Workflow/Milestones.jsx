@@ -30,7 +30,8 @@ class Milestones extends React.Component {
 		}
 
 		this.state = {
-			viewSize: viewSize
+			viewSize: viewSize,
+			showAll: false,
 		};
 
   	// create object with milestone arrays to accept tasks
@@ -121,6 +122,7 @@ class Milestones extends React.Component {
 					milestoneName={this.milestones[milestone].milestone_name}
 					tasks={this.milestones[milestone].tasks}
 					completed={this.milestones[milestone].completed}
+					showAll={this.state.showAll}
 				/>			 
 			</div>
 		);
@@ -180,7 +182,7 @@ class Milestones extends React.Component {
 			  	<div className="col-xs-12">
 				    <button 
 					    className="btn btn-default"
-				    	onClick={ ()=> this.setState({ open: !this.state.open })}
+				    	onClick={ ()=> this.setState({ showAll: !this.state.showAll })}
 				    >
 				    	Show all tasks
 				    </button>
